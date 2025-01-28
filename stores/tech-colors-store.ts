@@ -10,5 +10,9 @@ export const useTechColorsStore = defineStore("tech-colors", () => {
     "Next.js": "bg-blue-500",
   });
 
-  return { techColors };
+  function getTechColor(tech: string) {
+    return techColors.value[tech];
+  }
+
+  return { techColors, getTechColor };
 });

@@ -1,0 +1,6 @@
+{
+  "languages": [
+    { "language": "Polish", "knowledge": 100, "level": "Native" },
+    { "language": "English", "knowledge": 50, "level": "B1" }
+  ]
+}

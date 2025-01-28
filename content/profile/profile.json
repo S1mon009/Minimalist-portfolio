@@ -1,0 +1,19 @@
+{
+  "avatar": "/avatar.jpg",
+  "fullName": "Szymon Skałecki",
+  "profession": "Junior Full Stack Developer",
+  "description": "I am a junior full stack developer and I believe that creativity knows no limits, and every pixel tells a story.",
+  "resume": "/resume.pdf",
+  "socials": [
+    {
+      "type": "GitHub",
+      "name": "/S1mon009",
+      "url": "https://github.com/s1mon009"
+    },
+    {
+      "type": "LinkedIn",
+      "name": "/Szymon Skalecki",
+      "url": "https://github.com/s1mon009"
+    }
+  ]
+}

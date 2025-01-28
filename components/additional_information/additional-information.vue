@@ -1,17 +1,16 @@
 <script setup lang="ts">
+const props = defineProps<{ informations: string[] }>();
+
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Circle, Plus, Minus } from "lucide-vue-next";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Plus, Minus } from "lucide-vue-next";
 import { ref } from "vue";
 
 const isOpen = ref(true);
-
-const store = useGlobalStore();
 </script>
 
 <template>
@@ -19,7 +18,7 @@ const store = useGlobalStore();
     <Collapsible v-model:open="isOpen">
       <div class="flex justify-between">
         <CardHeader>
-          <CardTitle>Skills</CardTitle>
+          <CardTitle>Add. information</CardTitle>
         </CardHeader>
         <CardHeader>
           <CollapsibleTrigger>
@@ -28,18 +27,19 @@ const store = useGlobalStore();
           </CollapsibleTrigger>
         </CardHeader>
       </div>
-      <CollapsibleContent>
-        <CardContent>
+      <CollapsibleContent
+        ><CardContent>
           <div class="flex flex-wrap gap-2">
-            <Badge
-              v-for="(skill, index) in store.skills"
+            <div
+              v-for="(information, index) in props.informations"
               :key="index"
-              variant="secondary"
-              >{{ skill }}</Badge
+              class="flex items-center w-full"
             >
+              <Circle class="size-4" :class="'mr-2'" />{{ information }}
+            </div>
           </div>
-        </CardContent>
-      </CollapsibleContent>
+        </CardContent></CollapsibleContent
+      >
     </Collapsible>
   </Card>
 </template>

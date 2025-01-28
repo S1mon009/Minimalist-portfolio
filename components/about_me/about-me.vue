@@ -7,10 +7,9 @@ import {
 } from "@/components/ui/collapsible";
 import { Plus, Minus } from "lucide-vue-next";
 import { ref } from "vue";
+const about = await queryCollection("about").first();
 
 const isOpen = ref(true);
-
-const store = useGlobalStore();
 </script>
 
 <template>
@@ -28,8 +27,8 @@ const store = useGlobalStore();
         </CardHeader>
       </div>
       <CollapsibleContent>
-        <CardContent>
-          {{ store.about }}
+        <CardContent class="prose">
+          <ContentRenderer :value="about" />
         </CardContent>
       </CollapsibleContent>
     </Collapsible>

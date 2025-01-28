@@ -1,4 +1,13 @@
 <script setup lang="ts">
+interface Languages {
+  language: string;
+  knowledge: number;
+  level: string;
+}
+const props = defineProps<{
+  languages: Languages[];
+}>();
+
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -10,8 +19,6 @@ import { Plus, Minus } from "lucide-vue-next";
 import { ref } from "vue";
 
 const isOpen = ref(true);
-
-const store = useGlobalStore();
 </script>
 
 <template>
@@ -32,7 +39,7 @@ const store = useGlobalStore();
         ><CardContent>
           <div class="flex flex-wrap gap-2">
             <div
-              v-for="language in store.languages"
+              v-for="language in props.languages"
               :key="language.language"
               class="w-full"
             >
