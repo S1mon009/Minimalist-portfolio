@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import Profile from "@/components/profile/profile.vue";
+import Skills from "@/components/profile/skills.vue";
+import Languages from "@/components/profile/languages.vue";
+import AdditionalInformation from "@/components/profile/additional-information.vue";
+import AboutMe from "@/components/about_me/about-me.vue";
+import Projects from "@/components/projects/projects.vue";
+
 const { avatar, fullName, profession, description, resume, socials } =
   await queryCollection("profile").first();
 const { skills } = await queryCollection("skills").first();

@@ -5,10 +5,11 @@ description: 'A library of reusable React hooks and utilities designed to stream
 tech: 'Next.js'
 github: 'https://github.com/S1mon009/react-reuse'
 ---
-Live preview: [react-reuse.vercel.app](https://react-reuse.vercel.app/)
-----
+Live preview: dsv
 ### What is this?
-A **comprehensive collection** of reusable React hooks and utilities designed to streamline and simplify the development process. Whether you're building a **small application** or a **large-scale project**, React-Reuse provides a set of:
+A **comprehensive collection** of reusable React hooks and utilities designed to streamline and simplify the development process. Whether you're building a **small application** or a **large-scale project**. 
+
+React-Reuse provides a set of:
 - **Modular**
 - **Efficient**
 - **Well-tested** 

@@ -1,36 +1,16 @@
 <script setup lang="ts">
-import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { Plus, Minus } from "lucide-vue-next";
-import { ref } from "vue";
+import { CardContent } from "@/components/ui/card";
+import CollapseCard from "@/components/layouts/collapse-card.vue";
+import Prose from "@/components/layouts/prose.vue";
 const about = await queryCollection("about").first();
-
-const isOpen = ref(true);
 </script>
 
 <template>
-  <Card className="mb-4">
-    <Collapsible v-model:open="isOpen">
-      <div class="flex justify-between">
-        <CardHeader>
-          <CardTitle>About Me</CardTitle>
-        </CardHeader>
-        <CardHeader>
-          <CollapsibleTrigger>
-            <Plus v-if="!isOpen" class="size-6" />
-            <Minus v-if="isOpen" class="size-6" />
-          </CollapsibleTrigger>
-        </CardHeader>
-      </div>
-      <CollapsibleContent>
-        <CardContent class="prose">
-          <ContentRenderer :value="about" />
-        </CardContent>
-      </CollapsibleContent>
-    </Collapsible>
-  </Card>
+  <CollapseCard title="About Me" className="mb-4">
+    <Prose>
+      <CardContent>
+        <ContentRenderer :value="about" />
+      </CardContent>
+    </Prose>
+  </CollapseCard>
 </template>

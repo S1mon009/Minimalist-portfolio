@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
-  skills: string[];
+  title: string;
+  hideBorder?: boolean;
+  className?: string;
 }>();
 
-import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardTitle, CardHeader } from "@/components/ui/card";
 import {
   Collapsible,
   CollapsibleContent,
@@ -12,16 +13,22 @@ import {
 } from "@/components/ui/collapsible";
 import { Plus, Minus } from "lucide-vue-next";
 import { ref } from "vue";
+import { cn } from "~/lib/utils";
 
 const isOpen = ref(true);
 </script>
 
 <template>
-  <Card class="mt-4">
+  <Card
+    :class="[
+      cn(props.className),
+      props.hideBorder ? 'p-0 border-none shadow-none' : '',
+    ]"
+  >
     <Collapsible v-model:open="isOpen">
       <div class="flex justify-between">
-        <CardHeader>
-          <CardTitle>Skills</CardTitle>
+        <CardHeader :class="props.hideBorder ? 'pl-0' : ''">
+          <CardTitle>{{ props.title }}</CardTitle>
         </CardHeader>
         <CardHeader>
           <CollapsibleTrigger>
@@ -31,16 +38,7 @@ const isOpen = ref(true);
         </CardHeader>
       </div>
       <CollapsibleContent>
-        <CardContent>
-          <div class="flex flex-wrap gap-2">
-            <Badge
-              v-for="(skill, index) in props.skills"
-              :key="index"
-              variant="secondary"
-              >{{ skill }}</Badge
-            >
-          </div>
-        </CardContent>
+        <slot></slot>
       </CollapsibleContent>
     </Collapsible>
   </Card>
