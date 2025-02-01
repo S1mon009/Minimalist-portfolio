@@ -10,7 +10,7 @@ const props = defineProps<{
 
 import { CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import CollapseCard from "@/components/layouts/collapse-card.vue";
+import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 </script>
 
 <template>

@@ -2,12 +2,12 @@
 const props = defineProps<{ informations: string[] }>();
 
 import { CardContent } from "@/components/ui/card";
-import CollapseCard from "@/components/layouts/collapse-card.vue";
+import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 import { Circle } from "lucide-vue-next";
 </script>
 
 <template>
-  <CollapseCard title="Add. information" className="mt-4">
+  <CollapseCard title="Add. Information" className="mt-4">
     <CardContent>
       <div class="flex flex-wrap gap-2">
         <div

@@ -42,19 +42,26 @@ import { Github, Linkedin } from "lucide-vue-next";
         <p class="mt-2 text-start text-sm text-muted-foreground">
           {{ props.description }}
         </p>
-        <a target="_blank" :href="props.resume" class="w-full font-semibold"
-          ><Button variant="default" class="mt-4 w-full"> Resume </Button></a
+        <NuxtLink
+          target="_blank"
+          :href="props.resume"
+          class="w-full font-semibold"
+          external
+          ><Button variant="default" class="mt-4 w-full">
+            Resume
+          </Button></NuxtLink
         >
         <div
           class="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full"
         >
-          <a
+          <NuxtLink
             v-for="social in props.socials"
             :key="social.type"
             :href="social.url"
             target="_blank"
             class="cursor-pointer flex items-center gap-2 group"
             :title="social.name"
+            external
           >
             <Github v-show="social.type === 'GitHub'" class="size-4" />
             <Linkedin v-show="social.type === 'LinkedIn'" class="size-4" />
@@ -63,7 +70,7 @@ import { Github, Linkedin } from "lucide-vue-next";
             >
               {{ social.name }}
             </p>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </CardContent>

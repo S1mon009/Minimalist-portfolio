@@ -1,30 +1,27 @@
 <script setup lang="ts">
+import type { ProjectsCollectionItem } from "@nuxt/content";
+const props = defineProps<{
+  projects: ProjectsCollectionItem[];
+}>();
+
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { cn } from "~/lib/utils";
 import { Github } from "lucide-vue-next";
 import { Separator } from "@/components/ui/separator";
-import CollapseCard from "@/components/layouts/collapse-card.vue";
-import Prose from "@/components/layouts/prose.vue";
-import { getTechColor } from "./tech-colors";
-
-const allProjects = await queryCollection("projects")
-  .order("date", "DESC")
-  .all();
+import CollapseCard from "@/components/collapse_card/collapse-card.vue";
+import Dot from "@/components/ui/dot.vue";
 </script>
 
 <template>
-  <CollapseCard title="Projects" :hideBorder="true">
+  <CollapseCard title="Projects" :hideBorder="true" className="-mt-4 -mb-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-      <Card v-for="(project, index) in allProjects" :key="index">
+      <Card v-for="(project, index) in props.projects" :key="index">
         <CardContent class="pt-6 h-full">
           <div class="flex flex-col h-full">
             <div class="font-semibold text-primary hover:underline">
@@ -35,9 +32,7 @@ const allProjects = await queryCollection("projects")
             </p>
             <div class="mt-auto flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <div
-                  :class="cn('size-4 rounded-full', getTechColor(project.tech))"
-                />
+                <Dot :id="project.tech" />
                 <span className="text-xs font-medium text-muted-foreground">
                   {{ project.tech }}
                 </span>
@@ -49,7 +44,7 @@ const allProjects = await queryCollection("projects")
                       >View project</Button
                     ></SheetTrigger
                   >
-                  <SheetContent>
+                  <SheetContent class="overflow-y-auto">
                     <SheetHeader>
                       <SheetTitle class="text-2xl">{{
                         project.title
@@ -59,7 +54,9 @@ const allProjects = await queryCollection("projects")
                       </SheetDescription>
                     </SheetHeader>
                     <Separator class="mt-3" />
-                    <Prose><ContentRenderer :value="project" /></Prose>
+                    <NuxtLayout name="prose">
+                      ><ContentRenderer :value="project" class="mt-3"
+                    /></NuxtLayout>
                   </SheetContent>
                 </Sheet>
                 <NuxtLink :href="project.github" target="_blank">

@@ -1,0 +1,14 @@
+{
+  "education": [
+    {
+      "school": "Centrum kształcenia zawodowego i ustawicznego im. Jana Pawła II w Zbąszynku",
+      "description": "IT technician | matura exam",
+      "duration": "2018 - 2022"
+    },
+    {
+      "school": "Uniwersytet WSB Merito w Poznaniu",
+      "description": "IT | engineering studies | 5 semester",
+      "duration": "2022 - Present"
+    }
+  ]
+}

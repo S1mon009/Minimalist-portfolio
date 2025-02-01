@@ -6,9 +6,6 @@ description: A library of reusable React hooks and utilities designed to
 tech: Next.js
 github: https://github.com/S1mon009/react-reuse
 ---
-
-Live preview: :prose-a[react-reuse.vercel.app]{href="https://react-reuse.vercel.app/" target="_blank"}
-
 ### What is this?
 
 A **comprehensive collection** of reusable React hooks and utilities designed to streamline and simplify the development process. Whether you're building a **small application** or a **large-scale project**.
@@ -30,3 +27,5 @@ Built with flexibility and reusability in mind, React-Reuse empowers developers 
 - Create exceptional **user experiences**.
 - Reduce **boilerplate code**.
 - Improve the **overall quality** of their projects.
+
+Live preview: :prose-a[react-reuse.vercel.app]{href="https://react-reuse.vercel.app/" target="_blank"}

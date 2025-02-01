@@ -65,5 +65,48 @@ export default defineContentConfig({
         github: z.string(),
       }),
     }),
+    experience: defineCollection({
+      source: "experience/experience.json",
+      type: "data",
+      schema: z.object({
+        experience: z.array(
+          z.object({
+            role: z.string(),
+            company: z.string(),
+            logo: z.string(),
+            duration: z.string(),
+            description: z.string(),
+          })
+        ),
+      }),
+    }),
+    education: defineCollection({
+      source: "education/education.json",
+      type: "data",
+      schema: z.object({
+        education: z.array(
+          z.object({
+            school: z.string(),
+            description: z.string(),
+            duration: z.string(),
+          })
+        ),
+      }),
+    }),
+    courses: defineCollection({
+      source: "courses/courses.json",
+      type: "data",
+      schema: z.object({
+        courses: z.array(
+          z.object({
+            name: z.string(),
+            description: z.string(),
+            file: z.string(),
+            finishedAt: z.string(),
+            company: z.string(),
+          })
+        ),
+      }),
+    }),
   },
 });

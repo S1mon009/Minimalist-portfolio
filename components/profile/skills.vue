@@ -5,7 +5,7 @@ const props = defineProps<{
 
 import { CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import CollapseCard from "@/components/layouts/collapse-card.vue";
+import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 </script>
 
 <template>

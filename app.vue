@@ -5,6 +5,9 @@ import Languages from "@/components/profile/languages.vue";
 import AdditionalInformation from "@/components/profile/additional-information.vue";
 import AboutMe from "@/components/about_me/about-me.vue";
 import Projects from "@/components/projects/projects.vue";
+import Experience from "@/components/experience/experience.vue";
+import Education from "@/components/education/education.vue";
+import Courses from "./components/courses/courses.vue";
 
 const { avatar, fullName, profession, description, resume, socials } =
   await queryCollection("profile").first();
@@ -13,6 +16,10 @@ const { languages } = await queryCollection("languages").first();
 const { informations } = await queryCollection(
   "additionalInformations"
 ).first();
+const projects = await queryCollection("projects").order("date", "DESC").all();
+const { experience } = await queryCollection("experience").first();
+const { education } = await queryCollection("education").first();
+const { courses } = await queryCollection("courses").first();
 </script>
 
 <template>
@@ -32,7 +39,11 @@ const { informations } = await queryCollection(
           <Languages :languages="languages" />
           <AdditionalInformation :informations="informations" />
         </aside>
-        <main class="md:col-span-2"><AboutMe /><Projects /></main>
+        <main class="md:col-span-2">
+          <AboutMe /><Projects :projects="projects" /><Experience
+            :experience="experience"
+          /><Education :education="education" /><Courses :courses="courses" />
+        </main>
       </div>
     </div>
   </div>
