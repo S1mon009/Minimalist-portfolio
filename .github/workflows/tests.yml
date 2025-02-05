@@ -47,41 +47,32 @@ jobs:
 
   #     - name: Run unit tests
   #       run: npm run test:vitest
-  install:
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v6
-        with:
-          # Disable running of tests within install job
-          runTests: false
-          build: npm run build
-
-      - name: Save build folder
-        uses: actions/upload-artifact@v4
-        with:
-          name: build
-          if-no-files-found: error
-          path: .output
-
   cypress-run:
-    runs-on: ubuntu-24.04
-    needs: install
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Download the build folder
-        uses: actions/download-artifact@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          name: build
-          path: .output
+          node-version: 18
 
-      - name: Cypress run
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Nuxt app
+        run: npm run build
+
+      - name: Start Nuxt server
+        run: npm run preview &
+        env:
+          NUXT_PUBLIC_API_URL: http://localhost:3000
+
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
           start: npm run preview
+          wait-on: "http://localhost:3000"
           browser: chrome
