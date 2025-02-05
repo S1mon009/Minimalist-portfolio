@@ -8,15 +8,21 @@
     "dev:host": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test:vitest": "vitest",
+    "test:cypress": "cypress open"
   },
   "dependencies": {
     "@nuxt/content": "^3.0.1",
+    "@nuxt/eslint": "^1.0.0",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@tailwindcss/typography": "^0.5.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "eslint": "^9.19.0",
     "lucide-vue-next": "^0.468.0",
     "nuxt": "^3.14.1592",
     "pinia": "^2.3.0",
@@ -29,5 +35,15 @@
   },
   "overrides": {
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@nuxt/test-utils": "^3.14.4",
+    "@vue/test-utils": "^2.4.6",
+    "cypress": "^14.0.1",
+    "happy-dom": "^15.11.7",
+    "playwright-core": "^1.50.1",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9"
   }
 }

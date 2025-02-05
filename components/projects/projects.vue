@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import type { ProjectsCollectionItem } from "@nuxt/content";
-const props = defineProps<{
-  projects: ProjectsCollectionItem[];
-}>();
-
 import {
   Sheet,
   SheetContent,
@@ -14,12 +9,17 @@ import {
 } from "@/components/ui/sheet";
 import { Github } from "lucide-vue-next";
 import { Separator } from "@/components/ui/separator";
-import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 import Dot from "@/components/ui/dot.vue";
+import type { ProjectsCollectionItem } from "@nuxt/content";
+
+const props = defineProps<{
+  projects: ProjectsCollectionItem[];
+}>();
 </script>
 
 <template>
-  <CollapseCard title="Projects" :hideBorder="true" className="-mt-4 -mb-4">
+  <NuxtLayout name="collapse-card" :border="true" class="-mt-4 -mb-4">
+    <template #header> Projects</template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
       <Card v-for="(project, index) in props.projects" :key="index">
         <CardContent class="pt-6 h-full">
@@ -55,8 +55,8 @@ import Dot from "@/components/ui/dot.vue";
                     </SheetHeader>
                     <Separator class="mt-3" />
                     <NuxtLayout name="prose">
-                      ><ContentRenderer :value="project" class="mt-3"
-                    /></NuxtLayout>
+                      <ContentRenderer :value="project" class="mt-3" />
+                    </NuxtLayout>
                   </SheetContent>
                 </Sheet>
                 <NuxtLink :href="project.github" target="_blank">
@@ -69,6 +69,6 @@ import Dot from "@/components/ui/dot.vue";
           </div>
         </CardContent>
       </Card>
-    </div></CollapseCard
-  >
+    </div>
+  </NuxtLayout>
 </template>

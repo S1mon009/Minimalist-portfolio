@@ -1,16 +1,16 @@
 <script setup lang="ts">
+import { CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
 const props = defineProps<{
   skills: string[];
 }>();
-
-import { CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 </script>
 
 <template>
-  <CollapseCard title="Skills" className="mt-4"
-    ><CardContent>
+  <NuxtLayout name="collapse-card" class="mt-4">
+    <template #header>Skills</template>
+    <CardContent>
       <div class="flex flex-wrap gap-2">
         <Badge
           v-for="(skill, index) in props.skills"
@@ -20,5 +20,5 @@ import CollapseCard from "@/components/collapse_card/collapse-card.vue";
         >
       </div>
     </CardContent>
-  </CollapseCard>
+  </NuxtLayout>
 </template>

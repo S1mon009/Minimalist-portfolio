@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Dot from "@/components/ui/dot.vue";
+import { ExternalLink } from "lucide-vue-next";
+
 const props = defineProps<{
   courses: {
     name: string;
@@ -8,13 +11,10 @@ const props = defineProps<{
     company: string;
   }[];
 }>();
-
-import Dot from "@/components/ui/dot.vue";
-import CollapseCard from "@/components/collapse_card/collapse-card.vue";
-import { ExternalLink } from "lucide-vue-next";
 </script>
 <template>
-  <CollapseCard title="Courses" :hideBorder="true">
+  <NuxtLayout name="collapse-card" :border="true">
+    <template #header>Courses</template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
       <Card v-for="(course, index) in props.courses" :key="index">
         <CardContent class="pt-6 h-full">
@@ -47,5 +47,5 @@ import { ExternalLink } from "lucide-vue-next";
         </CardContent>
       </Card>
     </div>
-  </CollapseCard>
+  </NuxtLayout>
 </template>

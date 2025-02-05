@@ -1,13 +1,13 @@
 <script setup lang="ts">
-const props = defineProps<{ informations: string[] }>();
-
 import { CardContent } from "@/components/ui/card";
-import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 import { Circle } from "lucide-vue-next";
+
+const props = defineProps<{ informations: string[] }>();
 </script>
 
 <template>
-  <CollapseCard title="Add. Information" className="mt-4">
+  <NuxtLayout name="collapse-card" class="mt-4">
+    <template #header>Add. Information</template>
     <CardContent>
       <div class="flex flex-wrap gap-2">
         <div
@@ -18,6 +18,6 @@ import { Circle } from "lucide-vue-next";
           <Circle class="size-4" :class="'mr-2'" />{{ information }}
         </div>
       </div>
-    </CardContent></CollapseCard
-  >
+    </CardContent>
+  </NuxtLayout>
 </template>

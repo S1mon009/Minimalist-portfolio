@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+
 interface Languages {
   language: string;
   knowledge: number;
@@ -7,14 +10,11 @@ interface Languages {
 const props = defineProps<{
   languages: Languages[];
 }>();
-
-import { CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import CollapseCard from "@/components/collapse_card/collapse-card.vue";
 </script>
 
 <template>
-  <CollapseCard title="Languages" className="mt-4">
+  <NuxtLayout name="collapse-card" class="mt-4">
+    <template #header>Languages</template>
     <CardContent>
       <div class="flex flex-wrap gap-2">
         <div
@@ -32,5 +32,5 @@ import CollapseCard from "@/components/collapse_card/collapse-card.vue";
         </div>
       </div>
     </CardContent>
-  </CollapseCard>
+  </NuxtLayout>
 </template>

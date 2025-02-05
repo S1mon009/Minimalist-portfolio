@@ -1,5 +1,5 @@
 ---
-date: 2024-13-10
+date: 2024-10-13
 title: React-reuse
 description: A library of reusable React hooks and utilities designed to
   streamline development.

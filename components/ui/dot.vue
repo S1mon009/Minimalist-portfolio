@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { cn } from "~/lib/utils";
+
 const props = defineProps<{
   id: string;
 }>();
-
-import { cn } from "~/lib/utils";
 
 interface Colors {
   [key: string]: string;
@@ -14,6 +14,7 @@ const colors: Colors = {
   TypeScript: "bg-[#3178C6]",
   JavaScript: "bg-[#F7DF1E]",
   Udemy: "bg-[#A435F0]",
+  HTML: "bg-[#E34F26]",
 };
 
 const getColor = (item: string) => colors[item] || "";

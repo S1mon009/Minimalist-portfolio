@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin } from "lucide-vue-next";
+
 interface Socials {
   type: string;
   name: string;
@@ -12,10 +16,6 @@ const props = defineProps<{
   resume: string;
   socials: Socials[];
 }>();
-
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Linkedin } from "lucide-vue-next";
 </script>
 
 <template>

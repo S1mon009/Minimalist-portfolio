@@ -1,5 +1,5 @@
 ---
-date: 2023-09-08
+date: 2023-08-09
 title: JavaScript
 description: A diverse collection of JavaScript projects ranging from beginner to advanced levels.
 tech: JavaScript

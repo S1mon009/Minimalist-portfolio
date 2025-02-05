@@ -1,5 +1,5 @@
 ---
-date: 2023-05-09
+date: 2023-09-05
 title: TypeScript
 description: A diverse collection of TypeScript projects ranging from beginner to advanced levels.
 tech: TypeScript
