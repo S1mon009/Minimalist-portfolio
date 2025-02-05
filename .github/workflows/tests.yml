@@ -64,20 +64,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev \
-          libnss3 libxss1 libasound2-dev libxtst6 xauth xvfb
+      - name: Install wait-on
+        run: npm install -g wait-on
 
-      - name: Start Xvfb
-        run: Xvfb :99 -screen 0 1920x1080x24 &
-
-      - name: Start app and wait
+      - name: Start application
         run: npm start &
 
       - name: Wait for app to be ready
-        run: sleep 5
+        run: wait-on http://localhost:3000 --timeout 60000
+
+      - name: Check running processes
+        run: ps aux
+
+      - name: Check open ports
+        run: netstat -tlnp
 
       - name: Run Cypress tests
-        run: DISPLAY=:99 npx cypress run --browser firefox --headless
+        run: npx cypress run --browser firefox --headless
