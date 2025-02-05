@@ -3,8 +3,8 @@
 A minimalist portfolio application built with [Nuxt 3](https://nuxt.com) that offers a fast and elegant solution for showcasing your projects and skills. The app uses [Tailwind CSS](https://tailwindcss.com) for styling.
 
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/a899bd35-3da9-45e0-a88c-57df054363e9" alt="Image 1" style="width: 50%;" />
-  <img src="https://github.com/user-attachments/assets/86e3deca-8273-4c64-a8b1-c9a0f43fb095" alt="Image 2" style="width: 50%;" />
+  <img src="https://github.com/user-attachments/assets/a899bd35-3da9-45e0-a88c-57df054363e9" alt="Image 1" style="width: 49%;" />
+  <img src="https://github.com/user-attachments/assets/86e3deca-8273-4c64-a8b1-c9a0f43fb095" alt="Image 2" style="width: 49%;" />
 </div>
 
 ## Features
