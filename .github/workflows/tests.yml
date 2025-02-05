@@ -50,34 +50,15 @@ jobs:
 
   cypress-tests:
     name: Cypress e2e tests
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-18.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Configure node
-        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Chrome
+        uses: cypress-io/github-action@v5
+        timeout-minutes: 10
         with:
-          node-version: "18.x"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install wait-on
-        run: npm install -g wait-on
-
-      - name: Start application
-        run: npm start &
-
-      - name: Wait for app to be ready
-        run: wait-on http://localhost:3000 --timeout 60000
-
-      - name: Check running processes
-        run: ps aux
-
-      - name: Check open ports
-        run: netstat -tlnp
-
-      - name: Run Cypress tests
-        run: npx cypress run --browser firefox --headless
+          build: npm run build
+          start: npm run preview
+          browser: chrome
+          wait-on: "http://localhost:3000"
