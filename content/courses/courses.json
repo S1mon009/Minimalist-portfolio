@@ -34,6 +34,13 @@
       "file": "/certificates/Vue.js certificate.pdf",
       "finishedAt": "2025-20-01",
       "company": "Udemy"
+    },
+    {
+      "name": "LLM Engineering: Master AI, Large Language Models & Agents",
+      "description": "I learned how to effectively build, fine-tune, and deploy large language models and AI agents, gaining practical skills in prompt engineering and model integration.",
+      "file": "/certificates/LLM Engineering Master AI, Large Language Models & Agents certificate.pdf",
+      "finishedAt": "2025-05-01",
+      "company": "Udemy"
     }
   ]
 }
