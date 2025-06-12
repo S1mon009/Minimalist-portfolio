@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import Dot from "@/components/ui/dot.vue";
+import type { CourseProps } from "./props";
 import { ExternalLink } from "lucide-vue-next";
+import Dot from "@/components/ui/dot/dot.vue";
 
-const props = defineProps<{
-  courses: {
-    name: string;
-    description: string;
-    file: string;
-    finishedAt: string;
-    company: string;
-  }[];
-}>();
+const props = defineProps<CourseProps>();
 </script>
 <template>
   <NuxtLayout name="collapse-card" :border="true">

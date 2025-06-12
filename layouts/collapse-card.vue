@@ -10,7 +10,7 @@ import { ref } from "vue";
 
 const layoutProps = useAttrs();
 
-const isOpen = ref(true);
+const isOpen = ref<boolean>(true);
 </script>
 
 <template>
@@ -27,9 +27,9 @@ const isOpen = ref(true);
           <CardTitle><slot name="header" /></CardTitle>
         </CardHeader>
         <CardHeader>
-          <CollapsibleTrigger class="collapse-trigger">
-            <Plus v-if="!isOpen" class="size-6" />
-            <Minus v-if="isOpen" class="size-6" />
+          <CollapsibleTrigger class="collapse-trigger cursor-pointer">
+            <Plus v-if="!isOpen" class="w-6 h-6" />
+            <Minus v-if="isOpen" class="w-6 h-6" />
           </CollapsibleTrigger>
         </CardHeader>
       </div>

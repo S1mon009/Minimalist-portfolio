@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import Profile from "@/components/profile/profile.vue";
-import Skills from "@/components/profile/skills.vue";
-import Languages from "@/components/profile/languages.vue";
-import AdditionalInformation from "@/components/profile/additional-information.vue";
+import Profile from "@/components/profile/profile/profile.vue";
+import Skills from "@/components/profile/skills/skills.vue";
+import Languages from "@/components/profile/languages/languages.vue";
+import AdditionalInformation from "@/components/profile/additional_information/additional-information.vue";
 import AboutMe from "@/components/about_me/about-me.vue";
 import Projects from "@/components/projects/projects.vue";
 import Experience from "@/components/experience/experience.vue";
 import Education from "@/components/education/education.vue";
-import Courses from "./components/courses/courses.vue";
+import Courses from "@/components/courses/courses.vue";
 
 const { avatar, fullName, profession, description, resume, socials } =
   await queryCollection("profile").first();
@@ -24,7 +24,7 @@ const { courses } = await queryCollection("courses").first();
 
 <template>
   <div class="bg-background min-h-screen">
-    <div class="container max-w-screen-lg mx-auto px-4 py-8">
+    <div class="container max-w-(--breakpoint-lg) mx-auto px-4 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <aside class="md:col-span-1">
           <Profile

@@ -1,9 +1,23 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  compatibilityDate: "2025-01-05",
+  app: {
+    head: {
+      title: "Szymon Skałecki - Portfolio",
+      htmlAttrs: {
+        lang: "en",
+      },
+      link: [{ rel: "icon", type: "image/x-icon", href: "/avatar.jpg" }],
+    },
+  },
+  css: ["~/assets/css/tailwind.css"],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  compatibilityDate: "2025-06-13",
   devtools: { enabled: process.env.DEVTOOLS === "true" || false },
   ssr: process.env.SSR === "true" || false,
   modules: [
-    "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
     "@nuxt/image",
     "@nuxt/content",

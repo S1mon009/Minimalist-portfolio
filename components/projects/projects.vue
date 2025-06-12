@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { ProjectsCollectionItem } from "@nuxt/content";
 import {
   Sheet,
   SheetContent,
@@ -9,8 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Github } from "lucide-vue-next";
 import { Separator } from "@/components/ui/separator";
-import Dot from "@/components/ui/dot.vue";
-import type { ProjectsCollectionItem } from "@nuxt/content";
+import Dot from "@/components/ui/dot/dot.vue";
 
 const props = defineProps<{
   projects: ProjectsCollectionItem[];

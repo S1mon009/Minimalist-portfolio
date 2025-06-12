@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import type { SkillsProps } from "./props";
 
-const props = defineProps<{
-  skills: string[];
-}>();
+const props = defineProps<SkillsProps>();
 </script>
 
 <template>

@@ -1,16 +1,9 @@
 <script setup lang="ts">
+import type { ExperienceProps } from "./props";
 import { CardContent } from "@/components/ui/card";
 import { CalendarDays } from "lucide-vue-next";
 
-const props = defineProps<{
-  experience: {
-    role: string;
-    company: string;
-    logo: string;
-    duration: string;
-    description: string;
-  }[];
-}>();
+const props = defineProps<ExperienceProps>();
 </script>
 <template>
   <NuxtLayout name="collapse-card" class="mt-4">

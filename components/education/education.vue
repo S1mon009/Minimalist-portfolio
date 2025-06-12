@@ -1,14 +1,9 @@
 <script setup lang="ts">
+import type { EducationProps } from "./props";
 import { CardContent } from "@/components/ui/card";
 import { CalendarDays } from "lucide-vue-next";
 
-const props = defineProps<{
-  education: {
-    school: string;
-    description: string;
-    duration: string;
-  }[];
-}>();
+const props = defineProps<EducationProps>();
 </script>
 <template>
   <NuxtLayout name="collapse-card" class="mt-4">
@@ -18,7 +13,7 @@ const props = defineProps<{
         <li
           v-for="(item, index) in props.education"
           :key="index"
-          class="pb-8 last:pb-0 relative before:absolute before:content-[''] before:w-3 before:h-3 before:bg-primary before:rounded-full before:-left-5 before:top-[0.4375rem] after:absolute after:content-[''] after:w-0.5 after:h-[calc(100%-2.375rem)] last:after:h-[calc(100%-1.5rem)] after:bg-muted-foreground after:-left-[0.9375rem] after:top-6"
+          class="pb-8 last:pb-0 relative before:absolute before:content-[''] before:w-3 before:h-3 before:bg-primary before:rounded-full before:-left-5 before:top-1.75 after:absolute after:content-[''] after:w-0.5 after:h-[calc(100%-2.375rem)] last:after:h-[calc(100%-1.5rem)] after:bg-muted-foreground after:-left-3.75 after:top-6"
         >
           <div class="flex items-center space-x-4">
             <div>

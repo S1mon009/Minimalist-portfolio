@@ -1,15 +1,9 @@
 <script setup lang="ts">
 import { CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import type { LanguagesProps } from "./props";
 
-interface Languages {
-  language: string;
-  knowledge: number;
-  level: string;
-}
-const props = defineProps<{
-  languages: Languages[];
-}>();
+const props = defineProps<LanguagesProps>();
 </script>
 
 <template>

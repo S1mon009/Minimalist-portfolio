@@ -2,20 +2,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin } from "lucide-vue-next";
+import type { ProfileProps } from "./props";
 
-interface Socials {
-  type: string;
-  name: string;
-  url: string;
-}
-const props = defineProps<{
-  avatar: string;
-  fullName: string;
-  profession: string;
-  description: string;
-  resume: string;
-  socials: Socials[];
-}>();
+const props = defineProps<ProfileProps>();
 </script>
 
 <template>

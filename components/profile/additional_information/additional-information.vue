@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { CardContent } from "@/components/ui/card";
 import { Circle } from "lucide-vue-next";
+import type { AdditionalInformationProps } from "./props";
 
-const props = defineProps<{ informations: string[] }>();
+const props = defineProps<AdditionalInformationProps>();
 </script>
 
 <template>

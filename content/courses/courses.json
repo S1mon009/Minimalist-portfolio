@@ -1,24 +1,10 @@
 {
   "courses": [
     {
-      "name": "The Complete JavaScript Course 2023: From Zero to Expert!",
-      "description": "In this course, I learned the basics and advanced topics of javascript and web development.",
-      "file": "/certificates/JavaScript certificate.pdf",
-      "finishedAt": "2023-30-08",
-      "company": "Udemy"
-    },
-    {
-      "name": "React - The Complete Guide 2023 (incl. React Router & Redux)",
-      "description": "Thanks to this course, I learned how to use the React.js library and tools that make working with it easier, including Redux, React Router, React Query.",
-      "file": "/certificates/React.js certificate.pdf",
-      "finishedAt": "2023-16-11",
-      "company": "Udemy"
-    },
-    {
-      "name": "Next.js 14 & React - The Complete Guide",
-      "description": "This course taught me the basics and advanced functionalities of Next.js. It also developed my knowledge and skills in the field of Fullstack.",
-      "file": "/certificates/Next.js certificate.pdf",
-      "finishedAt": "2024-01-07",
+      "name": "Vue - The Complete Guide (incl. Router & Composition API)",
+      "description": "This course taught me the basics and advanced functionalities of Vue.js, including Router and Composition API.",
+      "file": "/certificates/Vue.js certificate.pdf",
+      "finishedAt": "2025-20-01",
       "company": "Udemy"
     },
     {
@@ -29,10 +15,24 @@
       "company": "Udemy"
     },
     {
-      "name": "Vue - The Complete Guide (incl. Router & Composition API)",
-      "description": "This course taught me the basics and advanced functionalities of Vue.js, including Router and Composition API.",
-      "file": "/certificates/Vue.js certificate.pdf",
-      "finishedAt": "2025-20-01",
+      "name": "Next.js 14 & React - The Complete Guide",
+      "description": "This course taught me the basics and advanced functionalities of Next.js. It also developed my knowledge and skills in the field of Fullstack.",
+      "file": "/certificates/Next.js certificate.pdf",
+      "finishedAt": "2024-01-07",
+      "company": "Udemy"
+    },
+    {
+      "name": "React - The Complete Guide 2023 (incl. React Router & Redux)",
+      "description": "Thanks to this course, I learned how to use the React.js library and tools that make working with it easier, including Redux, React Router, React Query.",
+      "file": "/certificates/React.js certificate.pdf",
+      "finishedAt": "2023-16-11",
+      "company": "Udemy"
+    },
+    {
+      "name": "The Complete JavaScript Course 2023: From Zero to Expert!",
+      "description": "In this course, I learned the basics and advanced topics of javascript and web development.",
+      "file": "/certificates/JavaScript certificate.pdf",
+      "finishedAt": "2023-30-08",
       "company": "Udemy"
     }
   ]
