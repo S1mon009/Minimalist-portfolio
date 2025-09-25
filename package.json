@@ -1,5 +1,13 @@
 {
-  "name": "nuxt-app",
+  "name": "minimalist-portfolio",
+  "version": "1.1.2",
+  "description": "A minimalist portfolio template built with Nuxt 3 and Tailwind CSS.",
+  "author": {
+    "name": "S1mon009",
+    "email": "szymon.skalecki530@gmail.com",
+    "url": "https://github.com/S1mon009/Minimalist-portfolio"
+  },
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
@@ -34,9 +42,6 @@
     "tailwindcss-animate": "^1.0.7",
     "vue": "latest",
     "vue-router": "latest"
-  },
-  "overrides": {
-    "vue": "latest"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.2",
