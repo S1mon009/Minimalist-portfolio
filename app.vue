@@ -8,6 +8,7 @@ import Projects from "@/components/projects/projects.vue";
 import Experience from "@/components/experience/experience.vue";
 import Education from "@/components/education/education.vue";
 import Courses from "@/components/courses/courses.vue";
+import Certificates from "@/components/certificates/certificates.vue";
 
 const { avatar, fullName, profession, description, resume, socials } =
   await queryCollection("profile").first();
@@ -20,6 +21,7 @@ const projects = await queryCollection("projects").order("date", "DESC").all();
 const { experience } = await queryCollection("experience").first();
 const { education } = await queryCollection("education").first();
 const { courses } = await queryCollection("courses").first();
+const { certificates } = await queryCollection("certificates").first();
 </script>
 
 <template>
@@ -42,7 +44,10 @@ const { courses } = await queryCollection("courses").first();
         <main class="md:col-span-2">
           <AboutMe /><Projects :projects="projects" /><Experience
             :experience="experience"
-          /><Education :education="education" /><Courses :courses="courses" />
+          />
+          <Education :education="education" />
+          <Certificates :certificates="certificates" />
+          <Courses :courses="courses" />
         </main>
       </div>
     </div>

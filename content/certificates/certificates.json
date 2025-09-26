@@ -1,0 +1,14 @@
+{
+  "certificates": [
+    {
+      "name": "EE.08",
+      "fullName": "Installation and operation of computer systems, peripheral devices and networks",
+      "description": "The EE.08 certificate validates my skills in assembling, configuring, and maintaining computer systems, peripheral devices, and local networks. I have hands-on experience with hardware installation, system setup, troubleshooting, and network management, enabling me to ensure efficient operation and maintenance of IT infrastructure."
+    },
+    {
+      "name": "EE.09",
+      "fullName": "Programming, creating and administration of websites and databases",
+      "description": "The EE.09 certificate validates my skills in application programming, database creation and management, as well as designing and deploying websites and web applications. I have hands-on experience with SQL, HTML, CSS, JavaScript, PHP and CMS platforms, enabling me to effectively manage data and deliver web projects."
+    }
+  ]
+}

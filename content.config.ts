@@ -108,5 +108,17 @@ export default defineContentConfig({
         ),
       }),
     }),
+    certificates: defineCollection({
+      source: "certificates/certificates.json",
+      type: "data",
+      schema: z.object({
+        certificates: z.array(
+          z.object({
+            name: z.string(),
+            description: z.string(),
+          })
+        ),
+      }),
+    }),
   },
 });
