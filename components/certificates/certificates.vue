@@ -15,14 +15,14 @@ const props = defineProps<CertificatesProps>();
 <template>
   <NuxtLayout name="collapse-card" :border="true">
     <template #header>Certificates</template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
       <Card v-for="(certificate, index) in props.certificates" :key="index">
-        <CardContent class="pt-6 h-full">
-          <div class="flex flex-col h-full">
-            <div class="font-semibold text-primary hover:underline">
+        <CardContent class="h-full pt-6">
+          <div class="flex h-full flex-col">
+            <div class="text-primary font-semibold hover:underline">
               {{ certificate.name }}
             </div>
-            <p class="text-sm text-muted-foreground mt-1 mb-4 line-clamp-2">
+            <p class="text-muted-foreground mt-1 mb-4 line-clamp-2 text-sm">
               {{ certificate.description }}
             </p>
             <div class="mt-auto flex items-center justify-end">

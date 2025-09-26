@@ -13,18 +13,18 @@ const props = defineProps<EducationProps>();
         <li
           v-for="(item, index) in props.education"
           :key="index"
-          class="pb-8 last:pb-0 relative before:absolute before:content-[''] before:w-3 before:h-3 before:bg-primary before:rounded-full before:-left-5 before:top-1.75 after:absolute after:content-[''] after:w-0.5 after:h-[calc(100%-2.375rem)] last:after:h-[calc(100%-1.5rem)] after:bg-muted-foreground after:-left-3.75 after:top-6"
+          class="before:bg-primary after:bg-muted-foreground relative pb-8 before:absolute before:top-1.75 before:-left-5 before:h-3 before:w-3 before:rounded-full before:content-[''] after:absolute after:top-6 after:-left-3.75 after:h-[calc(100%-2.375rem)] after:w-0.5 after:content-[''] last:pb-0 last:after:h-[calc(100%-1.5rem)]"
         >
           <div class="flex items-center space-x-4">
             <div>
               <h3 class="font-semibold">{{ item.school }}</h3>
-              <p class="text-sm text-muted-foreground">
+              <p class="text-muted-foreground text-sm">
                 {{ item.description }}
               </p>
             </div>
           </div>
-          <p class="text-xs text-muted-foreground mt-2 flex items-center">
-            <CalendarDays class="size-3 mr-2" />
+          <p class="text-muted-foreground mt-2 flex items-center text-xs">
+            <CalendarDays class="mr-2 size-3" />
             {{ item.duration }}
           </p>
         </li>

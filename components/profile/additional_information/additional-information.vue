@@ -14,7 +14,7 @@ const props = defineProps<AdditionalInformationProps>();
         <div
           v-for="(information, index) in props.informations"
           :key="index"
-          class="flex items-center w-full"
+          class="flex w-full items-center"
         >
           <Circle class="size-4" :class="'mr-2'" />{{ information }}
         </div>

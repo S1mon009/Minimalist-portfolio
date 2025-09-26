@@ -3,9 +3,13 @@ import type { DotProps } from "./props";
 import { colors } from "~/data/colors";
 
 const props = defineProps<DotProps>();
-const getColor = (item: string) => colors[item] || "";
-const color = computed(() => getColor(props.id));
+
+const color = computed(() => colors[props.id] || "#000");
 </script>
+
 <template>
-  <div class="size-4 rounded-full" :style="{ backgroundColor: color }" />
+  <div
+    class="h-4 w-4 rounded-full transition-colors"
+    :style="{ backgroundColor: color }"
+  />
 </template>

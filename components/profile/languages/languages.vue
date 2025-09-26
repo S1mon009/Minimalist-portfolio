@@ -16,7 +16,7 @@ const props = defineProps<LanguagesProps>();
           :key="language.language"
           class="w-full"
         >
-          <span class="block mb-1"
+          <span class="mb-1 block"
             >{{ language.language }}
             <span class="text-muted-foreground"
               >({{ language.level }})</span

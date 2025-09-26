@@ -13,7 +13,7 @@ const props = defineProps<ExperienceProps>();
         <li
           v-for="(item, index) in props.experience"
           :key="index"
-          class="border-b last:border-b-0 pb-8 last:pb-0"
+          class="border-b pb-8 last:border-b-0 last:pb-0"
         >
           <div class="flex items-center space-x-4">
             <NuxtImg
@@ -25,16 +25,16 @@ const props = defineProps<ExperienceProps>();
             />
             <div>
               <h3 class="font-semibold">{{ item.role }}</h3>
-              <p class="text-sm text-muted-foreground">
+              <p class="text-muted-foreground text-sm">
                 {{ item.company }}
               </p>
             </div>
           </div>
-          <p class="text-xs text-muted-foreground mt-2 flex items-center">
-            <CalendarDays class="size-3 mr-2" />
+          <p class="text-muted-foreground mt-2 flex items-center text-xs">
+            <CalendarDays class="mr-2 size-3" />
             {{ item.duration }}
           </p>
-          <p class="text-sm mt-2">{{ item.description }}</p>
+          <p class="mt-2 text-sm">{{ item.description }}</p>
         </li>
       </ul>
     </CardContent>
