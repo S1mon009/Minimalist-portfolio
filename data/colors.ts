@@ -11,4 +11,5 @@ export const colors: Colors = {
   Udemy: "#A435F0",
   HTML: "#E34F26",
   Python: "#3776AB",
+  "Nest.js": "#E0234E",
 };
